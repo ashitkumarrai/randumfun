@@ -110,8 +110,11 @@
                 // Handle the response if needed
                 console.log('Response:', data);
 
-                // Hide loading indicator
-                document.getElementById('loading').style.display = 'none';
+                // Wait for an additional 1 second
+                setTimeout(() => {
+                    // Hide loading indicator
+                    document.getElementById('loading').style.display = 'none';
+                }, 1000);
 
                 // Reset the form (clear the file input)
                 document.getElementById('fileForm').reset();
