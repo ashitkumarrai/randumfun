@@ -130,6 +130,7 @@
             .then(response => response.json())
             .then(data => {
                 // Create HTML table rows dynamically
+                console.log(data);
                 var tableBody = document.getElementById('mediaTable').getElementsByTagName('tbody')[0];
 
                 data.forEach(file => {
