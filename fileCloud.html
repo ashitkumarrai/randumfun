@@ -114,10 +114,12 @@
                 setTimeout(() => {
                     // Hide loading indicator
                     document.getElementById('loading').style.display = 'none';
+                    // Reset the form (clear the file input)
+                    document.getElementById('fileForm').reset();
                 }, 1000);
 
-                // Reset the form (clear the file input)
-                document.getElementById('fileForm').reset();
+                
+                
             })
             .catch(error => {
                 // Handle errors
