@@ -31,16 +31,6 @@
             background-color: #4CAF50;
             color: white;
         }
-         body {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background-color: #f0f0f0;
-            margin: 50px;
-        }
-
-        h1 {
-            color: #333;
-        }
 
         form {
             display: flex;
@@ -72,80 +62,31 @@
             border: 1px solid #ddd;
             text-align: left;
         }
+
+        .link-button {
+            display: inline-block;
+            background-color: #008CBA;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .link-button:hover {
+            background-color: #005A79;
+        }
     </style>
 </head>
 <body>
- <h1>Experimental File Storage Service</h1>
-     <form id="fileForm" enctype="multipart/form-data">
+    <h1>Experimental File Storage Service</h1>
+
+    <form id="fileForm" enctype="multipart/form-data">
         <label for="file">Choose a file:</label>
         <input type="file" id="file" name="file" required>
-        
         <input type="submit" value="Submit">
     </form>
 
-    <div id="response"></div>
-
-<!--     <script>
-        document.getElementById('fileForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Create FormData object to send the file
-            var formData = new FormData(this);
-
-            // Send a POST request to the specified API endpoint
-            fetch('https://tolerant-factually-rattler.ngrok-free.app/media/upload', {
-                method: 'POST',
-                body: formData,
-            })
-            .then(response => response.json())
-            .then(data => {
-                // Display the JSON response
-                document.getElementById('response').innerHTML = '<pre>' + JSON.stringify(data, null, 2) + '</pre>';
-            })
-            .catch(error => {
-                // Handle errors
-                console.error('Error:', error);
-                document.getElementById('response').innerHTML = '<pre>Error: ' + error.message + '</pre>';
-            });
-        });
-    </script> -->
-
-    
-    <h1>Media Files Table</h1>
-
-    <table id="mediaTable">
-        <thead>
-            <tr>
-                <th>File Name</th>
-                <th>File Type</th>
-                <th>Media URL</th>
-            </tr>
-        </thead>
-        <tbody></tbody>
-    </table>
-
-    <script>
-        // Fetch data from the API
-        fetch('https://tolerant-factually-rattler.ngrok-free.app/media/show/all')
-            .then(response => response.json())
-            .then(data => {
-                // Create HTML table rows dynamically
-                var tableBody = document.getElementById('mediaTable').getElementsByTagName('tbody')[0];
-
-                data.forEach(file => {
-                    var row = tableBody.insertRow();
-                    var fileNameCell = row.insertCell(0);
-                    var fileTypeCell = row.insertCell(1);
-                    var mediaUrlCell = row.insertCell(2);
-
-                    fileNameCell.textContent = file.fileOriginalName || 'N/A';
-                    fileTypeCell.textContent = file.mediaContentType || 'N/A';
-                    mediaUrlCell.innerHTML = `<a href="${file.mediaUrl}" target="_blank">${file.mediaUrl}</a>`;
-                });
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-    </script>
+    <a href="/showAll" class="link-button">View All Files</a>
 </body>
 </html>
