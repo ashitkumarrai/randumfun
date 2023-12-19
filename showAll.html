@@ -117,7 +117,9 @@
 
                     fileNameCell.textContent = file.fileOriginalName || 'N/A';
                     fileTypeCell.textContent = file.mediaContentType || 'N/A';
-                     mediaUrlCell.innerHTML = `<a href="https://tolerant-factually-rattler.ngrok-free.app${file.mediaUrl}" target="_blank">Link</a>`;
+                    mediaUrlCell.innerHTML = `<a href="https://tolerant-factually-rattler.ngrok-free.app${file.mediaUrl}" target="_blank">Link</a>`;
+
+
                 });
             })
             .catch(error => {
