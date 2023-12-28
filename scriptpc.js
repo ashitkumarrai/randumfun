@@ -1,19 +1,5 @@
 let highestZ = 1;
 
- document.addEventListener("click", function() {
-    handleAudioEvent();
-});
-
-document.addEventListener("mouseenter", function() {
-    handleAudioEvent();
-});
-
-function handleAudioEvent() {
-    if (audio.paused) {
-        audio.muted = false;
-        audio.play();
-    }
-}
 
 
 class Paper {
