@@ -1,5 +1,21 @@
 let highestZ = 1;
 
+ document.addEventListener("click", function() {
+    handleAudioEvent();
+});
+
+document.addEventListener("mouseenter", function() {
+    handleAudioEvent();
+});
+
+function handleAudioEvent() {
+    if (audio.paused) {
+        audio.muted = false;
+        audio.play();
+    }
+}
+
+
 class Paper {
 
   holdingPaper = false;
@@ -32,22 +48,12 @@ class Paper {
 
   rotating = false;
 
-    playInteractionSound() {
-    const interactionSound = document.getElementById('interactionSound');
-    interactionSound.currentTime = 0; // Rewind the sound to the beginning
-    interactionSound.play();
-  }
+ 
 
   init(paper) {
     
   // Request user interaction
-  document.addEventListener("click", function() {
-    if (audio.paused) {
-      audio.muted = false;
-      audio.play();
-    }
-  });
-     this.playInteractionSound();
+
 
     paper.addEventListener('touchmove', (e) => {
 
