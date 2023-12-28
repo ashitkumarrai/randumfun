@@ -32,7 +32,14 @@ class Paper {
 
   rotating = false;
 
+    playInteractionSound() {
+    const interactionSound = document.getElementById('interactionSound');
+    interactionSound.currentTime = 0; // Rewind the sound to the beginning
+    interactionSound.play();
+  }
+
   init(paper) {
+     this.playInteractionSound();
 
     paper.addEventListener('touchmove', (e) => {
 
