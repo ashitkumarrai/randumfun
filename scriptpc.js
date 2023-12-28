@@ -39,6 +39,14 @@ class Paper {
   }
 
   init(paper) {
+    
+  // Request user interaction
+  document.addEventListener("click", function() {
+    if (audio.paused) {
+      audio.muted = false;
+      audio.play();
+    }
+  });
      this.playInteractionSound();
 
     paper.addEventListener('touchmove', (e) => {
