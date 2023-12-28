@@ -50,9 +50,14 @@ body {
 }</style>
   </head>
   <body>
-     <audio autoplay loop >
-        <source src="song1.mp3" type="audio/mp3">
-      </audio>
+    <audio id="myAudio" muted>
+  <source src="song1.mp3" type="audio/mp3">
+</audio>
+
+
+ 
+
+
     <div class="bg_heart"></div>
 
     <div class="container">
@@ -78,6 +83,16 @@ function typeWriter() {
     i++;
     setTimeout(typeWriter, speed);
   }
-}</script>
+}
+     var audio = document.getElementById("myAudio");
+
+  // Request user interaction
+  document.addEventListener("click", function() {
+    if (audio.paused) {
+      audio.muted = false;
+      audio.play();
+    }
+  });
+    </script>
   </body>
 </html>
