@@ -135,6 +135,16 @@ p a {
             document.getElementById("noButton").style.left = `${x}px`;
             document.getElementById("noButton").style.top = `${y}px`;
           }
+
+          var audio = document.getElementById("myAudio");
+
+  // Request user interaction
+  document.addEventListener("click", function() {
+    if (audio.paused) {
+      audio.muted = false;
+      audio.play();
+    }
+  });
         </script>
       </div>
     </div>
