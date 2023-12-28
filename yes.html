@@ -104,9 +104,16 @@ p a {
           alt="Cute animated illustration"
         />
       </div>
-      <button class="btn" id="yesButton" onclick="nextPage()">
+      <button class="btn" id="yesButton" onclick="sendEmail()">
         Let's Fix a Date
       </button>
     </div>
+     <script>
+      function sendEmail() {
+        // Redirect to the default email client with a pre-filled email
+        window.location.href =
+          'mailto:ashitcmd@gmail.com?subject=Date%20Fixing%20&body=Hey%20Ashit,%20let%27s%20fix%20a%20date!';
+      }
+    </script>
   </body>
 </html>
